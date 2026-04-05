@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Mother's Day Flowers | Same-Day Flower Delivery</title>
+  <meta name="description" content="Shop beautiful Mother's Day flowers, roses, and bouquets with same-day delivery options. Find the perfect arrangement to make Mom smile." />
+  <style>
+    :root {
+      --bg: #fff7fa;
+      --surface: #ffffff;
+      --surface-2: #fff0f5;
+      --text: #2f1f29;
+      --muted: #6f5a66;
+      --primary: #e9427a;
+      --primary-dark: #c92a62;
+      --accent: #ffdde8;
+      --border: #f3c9d7;
+      --shadow: 0 12px 30px rgba(104, 34, 61, 0.10);
+      --radius: 20px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #fff9fb 0%, #fff2f6 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid #f5d8e2;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .topbar-inner {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      text-align: center;
+      flex-wrap: wrap;
+    }
+
+    .topbar span::before {
+      content: "✓ ";
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    header.hero {
+      position: relative;
+      overflow: hidden;
+      padding: 28px 0 70px;
+      background:
+        radial-gradient(circle at top right, rgba(255, 206, 223, 0.8), transparent 30%),
+        radial-gradient(circle at top left, rgba(255, 226, 236, 0.95), transparent 28%),
+        linear-gradient(180deg, #fff8fb 0%, #ffeef4 100%);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 10px 0 26px;
+    }
+
+    .brand {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: #b81d58;
+    }
+
+    .brand small {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .nav-cta {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 12px 18px;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .nav-cta:hover,
+    .btn:hover {
+      transform: translateY(-2px);
+      background: var(--primary-dark);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: #b81d58;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(185, 65, 115, 0.08);
+    }
+
+    .hero h1 {
+      margin: 18px 0 14px;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p.lead {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 0 26px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 15px 24px;
+      font-weight: 800;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      border: 2px solid var(--border);
+      background: #fff;
+      color: #b81d58;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 22px;
+      color: var(--muted);
+      font-size: 15px;
+      margin-top: 8px;
+    }
+
+    .hero-points span::before {
+      content: "✓ ";
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, #fff 0%, #fff7fb 100%);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 26px;
+      position: relative;
+    }
+
+    .badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #ffe46b;
+      color: #6b4f00;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+
+    .bouquet {
+      min-height: 310px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 30% 20%, #ffd6e5 0 15%, transparent 15.2%),
+        radial-gradient(circle at 56% 18%, #ffb8d0 0 14%, transparent 14.2%),
+        radial-gradient(circle at 74% 26%, #ffcddd 0 13%, transparent 13.2%),
+        radial-gradient(circle at 42% 39%, #ffb2ca 0 14%, transparent 14.2%),
+        radial-gradient(circle at 63% 43%, #ffd9e8 0 12%, transparent 12.2%),
+        radial-gradient(circle at 28% 45%, #ffc3d7 0 11%, transparent 11.2%),
+        linear-gradient(180deg, #fff7fb 0%, #ffeaf1 100%);
+      border: 1px solid #f8d7e3;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .bouquet::after {
+      content: "";
+      position: absolute;
+      inset: 54% 22% 8% 22%;
+      background: linear-gradient(180deg, rgba(120, 178, 101, 0.95), rgba(82, 146, 74, 0.95));
+      clip-path: polygon(47% 0%, 53% 0%, 60% 100%, 40% 100%);
+      border-radius: 0 0 16px 16px;
+    }
+
+    .mini-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px;
+    }
+
+    .mini-list li {
+      padding: 8px 0;
+      color: var(--muted);
+      border-bottom: 1px dashed #f0d7e0;
+    }
+
+    .mini-list li:last-child { border-bottom: 0; }
+    .mini-list li::before {
+      content: "✓ ";
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .timer {
+      background: linear-gradient(90deg, #fff5d7, #fff1ba);
+      color: #785300;
+      border: 1px solid #f0d48d;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    section {
+      padding: 28px 0 18px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin: 0 0 10px;
+      letter-spacing: -0.8px;
+    }
+
+    .section-title p {
+      margin: 0 auto;
+      max-width: 740px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+      height: 100%;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-top: 0;
+    }
+
+    .price-tag {
+      display: inline-block;
+      margin: 8px 0 16px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: #b81d58;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .product-visual {
+      height: 180px;
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 25% 28%, #ffcade 0 14%, transparent 14.2%),
+        radial-gradient(circle at 49% 18%, #ffb8d0 0 15%, transparent 15.2%),
+        radial-gradient(circle at 71% 28%, #ffd7e5 0 13%, transparent 13.2%),
+        radial-gradient(circle at 36% 52%, #ffbfd4 0 13%, transparent 13.2%),
+        radial-gradient(circle at 62% 55%, #ffd9e8 0 12%, transparent 12.2%),
+        linear-gradient(180deg, #fff7fb 0%, #ffe9f1 100%);
+      border: 1px solid #f6d7e2;
+      margin-bottom: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-visual::after {
+      content: "";
+      position: absolute;
+      left: 44%;
+      bottom: 0;
+      width: 12%;
+      height: 42%;
+      background: linear-gradient(180deg, #79b266, #4f9152);
+      border-radius: 12px 12px 0 0;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      color: var(--muted);
+      margin: 0 0 20px;
+    }
+
+    .card ul li { margin-bottom: 8px; }
+
+    .review-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .quote {
+      font-size: 16px;
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .stars {
+      color: #ffb300;
+      font-size: 18px;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .reviewer {
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #ff5d92, #db3e74);
+      color: #fff;
+      font-weight: 900;
+      font-size: 20px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight {
+      background: linear-gradient(180deg, #fff 0%, #fff6fa 100%);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 24px;
+    }
+
+    .checklist li {
+      margin-bottom: 12px;
+      color: var(--muted);
+    }
+
+    .checklist li::before {
+      content: "✓ ";
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .cta-panel {
+      background: linear-gradient(180deg, #ffedf4 0%, #ffe0eb 100%);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 26px;
+      text-align: center;
+    }
+
+    .cta-panel h3 {
+      margin-top: 0;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .cta-panel p {
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .faq {
+      display: grid;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px 22px;
+      box-shadow: 0 8px 20px rgba(126, 52, 82, 0.06);
+    }
+
+    .faq-item h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    footer {
+      margin-top: 38px;
+      background: #fff;
+      border-top: 1px solid #f2d7df;
+      padding: 28px 0 42px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .footer-links a {
+      color: #b81d58;
+      text-decoration: none;
+      margin-right: 16px;
+      font-weight: 700;
+    }
+
+    .notice {
+      background: #fff7d9;
+      border: 1px solid #f1e2a4;
+      color: #6f5b00;
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-top: 14px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-3,
+      .review-wrap,
+      .steps,
+      .highlight-grid,
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 38px; }
+      .btn, .nav-cta { width: 100%; text-align: center; }
+      .hero-card { padding: 20px; }
+      .card, .highlight, .cta-panel { padding: 20px; }
+      .container { width: min(var(--max), calc(100% - 20px)); }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Same-Day Delivery Options</span>
+      <span>Beautiful Mother's Day Bouquets</span>
+      <span>Easy Online Ordering</span>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <nav class="nav">
+        <div class="brand">
+          HappyMother'sDayFlowers.com
+          <small>Thoughtful bouquets for the most important woman in your life</small>
+        </div>
+        <a class="nav-cta" href="http://www.floristone.com/main.cfm?occ=md&amp;source_id=aff&amp;AffiliateID=2025049264" target="_blank" rel="nofollow sponsored noopener">Shop Mother's Day Flowers</a>
+      </nav>
+
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">🌸 Mother's Day Special Collection</div>
+          <h1>Make Mom Smile With Beautiful Flowers Delivered Right to Her Door</h1>
+          <p class="lead">Shop elegant roses, mixed bouquets, and heartfelt floral gifts perfect for Mother's Day. Find a beautiful arrangement she will love.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="http://www.floristone.com/main.cfm?occ=md&amp;source_id=aff&amp;AffiliateID=2025049264" target="_blank" rel="nofollow sponsored noopener">Shop Best-Selling Flowers →</a>
+            <a class="btn btn-secondary" href="#favorites">See Popular Picks</a>
+          </div>
+          <div class="hero-points">
+            <span>Perfect for Mother's Day gifting</span>
+            <span>Fresh bouquets for every budget</span>
+            <span>Easy delivery options</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="badge">Popular Gift Idea</div>
+          <div class="bouquet" aria-hidden="true"></div>
+          <ul class="mini-list">
+            <li>Fresh flowers for every style</li>
+            <li>Classic roses, lilies, tulips, and more</li>
+            <li>Simple ordering in just a few clicks</li>
+          </ul>
+          <a class="btn btn-primary" style="width:100%; text-align:center;" href="http://www.floristone.com/main.cfm?occ=md&amp;source_id=aff&amp;AffiliateID=2025049264" target="_blank" rel="nofollow sponsored noopener">Order Mother's Day Flowers</a>
+          <div class="timer">Mother's Day is coming soon — order early for the best selection.</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="favorites">
+    <div class="container">
+      <div class="section-title">
+        <h2>Popular Mother's Day Flower Picks</h2>
+        <p>Choose from timeless roses, cheerful mixed bouquets, and elegant premium arrangements designed to make her day unforgettable.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="product-visual" aria-hidden="true"></div>
+          <span class="price-tag">Classic Favorite</span>
+          <h3>Elegant Roses</h3>
+          <p>A timeless choice that says thank you, love, and appreciation all in one beautiful bouquet.</p>
+          <ul>
+            <li>Romantic and thoughtful presentation</li>
+            <li>Perfect for traditional Mother's Day gifts</li>
+            <li>Great for home or office delivery</li>
+          </ul>
+          <a class="btn btn-primary" href="http://www.floristone.com/main.cfm?occ=md&amp;source_id=aff&amp;AffiliateID=2025049264" target="_blank" rel="nofollow sponsored noopener">Shop Roses</a>
+        </article>
+
+        <article class="card">
+          <div class="product-visual" aria-hidden="true"></div>
+          <span class="price-tag">Most Loved</span>
+          <h3>Mixed Bouquets</h3>
+          <p>Bright, colorful floral arrangements that feel festive, warm, and full of joy for Mother's Day.</p>
+          <ul>
+            <li>Vibrant mix of seasonal blooms</li>
+            <li>Ideal for cheerful gift moments</li>
+            <li>Great option for all flower styles</li>
+          </ul>
+          <a class="btn btn-primary" href="http://www.floristone.com/main.cfm?occ=md&amp;source_id=aff&amp;AffiliateID=2025049264" target="_blank" rel="nofollow sponsored noopener">Browse Bouquets</a>
+        </article>
+
+        <article class="card">
+          <div class="product-visual" aria-hidden="true"></div>
+          <span class="price-tag">Premium Choice</span>
+          <h3>Luxury Arrangements</h3>
+          <p>Make a bigger statement with a premium floral gift designed to leave a lasting impression.</p>
+          <ul>
+            <li>Upscale arrangement style</li>
+            <li>Perfect for a memorable surprise</li>
+            <li>Beautiful presentation for special delivery</li>
+          </ul>
+          <a class="btn btn-primary" href="http://www.floristone.com/main.cfm?occ=md&amp;source_id=aff&amp;AffiliateID=2025049264" target="_blank" rel="nofollow sponsored noopener">View Premium Flowers</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Shoppers Love Sending Flowers for Mother's Day</h2>
+        <p>Flowers are meaningful, beautiful, and instantly emotional. They are one of the easiest ways to make Mother's Day feel extra special.</p>
+      </div>
+
+      <div class="review-wrap">
+        <article class="card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">“The bouquet looked amazing and made Mother's Day feel even more special. A simple gift that had a big impact.”</p>
+          <div class="reviewer">Happy Customer</div>
+        </article>
+
+        <article class="card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">“Beautiful flowers, easy ordering, and a thoughtful surprise that felt personal. Perfect for celebrating Mom.”</p>
+          <div class="reviewer">Gift Shopper</div>
+        </article>
+
+        <article class="card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">“I wanted something elegant and memorable for Mother's Day, and flowers were the perfect choice.”</p>
+          <div class="reviewer">Satisfied Buyer</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container highlight">
+      <div class="highlight-grid">
+        <div>
+          <div class="section-title" style="text-align:left; margin-bottom:0;">
+            <h2>Find the Perfect Mother's Day Gift in Minutes</h2>
+            <p>Whether you want something classic, colorful, or luxurious, you can quickly explore beautiful arrangements and pick a bouquet that matches your style and budget.</p>
+          </div>
+          <ul class="checklist">
+            <li>Great gift idea for near or long-distance family</li>
+            <li>Fresh floral options for every budget</li>
+            <li>Simple ordering for a fast Mother's Day surprise</li>
+            <li>Elegant gift option that feels personal and heartfelt</li>
+          </ul>
+          <a class="btn btn-primary" href="http://www.floristone.com/main.cfm?occ=md&amp;source_id=aff&amp;AffiliateID=2025049264" target="_blank" rel="nofollow sponsored noopener">Start Shopping Now →</a>
+        </div>
+
+        <div class="cta-panel">
+          <h3>Ready to Surprise Mom?</h3>
+          <p>Browse Mother's Day flowers and choose a beautiful arrangement she will remember.</p>
+          <a class="btn btn-primary" style="width:100%; text-align:center; margin-bottom:12px;" href="http://www.floristone.com/main.cfm?occ=md&amp;source_id=aff&amp;AffiliateID=2025049264" target="_blank" rel="nofollow sponsored noopener">Shop Mother's Day Flowers</a>
+          <a class="btn btn-secondary" style="width:100%; text-align:center;" href="http://www.floristone.com/main.cfm?occ=md&amp;source_id=aff&amp;AffiliateID=2025049264" target="_blank" rel="nofollow sponsored noopener">See All Flower Options</a>
+          <div class="notice">Tip: Ordering early usually gives you the best selection for Mother's Day delivery.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>How It Works</h2>
+        <p>Sending flowers for Mother's Day is easy. Just browse, choose a favorite arrangement, and place your order online.</p>
+      </div>
+
+      <div class="steps">
+        <article class="card">
+          <div class="step-number">1</div>
+          <h3>Browse Flowers</h3>
+          <p>Explore Mother's Day bouquets, roses, and premium arrangements that fit your gift style.</p>
+        </article>
+        <article class="card">
+          <div class="step-number">2</div>
+          <h3>Choose Your Favorite</h3>
+          <p>Pick the arrangement that feels right for Mom, whether you want classic, bright, or elegant.</p>
+        </article>
+        <article class="card">
+          <div class="step-number">3</div>
+          <h3>Send a Thoughtful Gift</h3>
+          <p>Complete your order online and make Mother's Day feel special with a beautiful floral surprise.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Mother's Day Flower Questions</h2>
+        <p>Quick answers to common questions from gift shoppers.</p>
+      </div>
+
+      <div class="faq">
+        <div class="faq-item">
+          <h3>What are the best flowers for Mother's Day?</h3>
+          <p>Popular choices include roses, tulips, lilies, carnations, and colorful mixed bouquets. The best option depends on Mom's style and your budget.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I find flowers for different budgets?</h3>
+          <p>Yes. You can usually browse a variety of bouquet sizes and styles, from affordable arrangements to premium gift options.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is this site affiliated with the flower provider?</h3>
+          <p>Yes. This site contains affiliate links, which means we may earn a commission if you make a purchase through our links at no extra cost to you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>HappyMother'sDayFlowers.com</strong><br />
+        Celebrate Mother's Day with beautiful flowers, meaningful gifts, and heartfelt surprises.
+        <div class="notice">Affiliate Disclosure: This website contains affiliate links. We may earn a commission from qualifying purchases made through those links, at no extra cost to you.</div>
+      </div>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#favorites">Popular Picks</a>
+        <a href="http://www.floristone.com/main.cfm?occ=md&amp;source_id=aff&amp;AffiliateID=2025049264" target="_blank" rel="nofollow sponsored noopener">Shop Flowers</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
